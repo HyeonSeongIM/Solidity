@@ -1,8 +1,14 @@
 pragma solidity >=0.5.0 <0.6.0;
 import "./zombiefeeding.sol";
+
+//좀비 생성 → createRandomZombie() 호출
+//CryptoKitty 먹기 → feedOnKitty() 호출
+//좀비 관리 → changeName(), changeDna() 사용
+//소유한 좀비 조회 → getZombiesByOwner() 호출
+
 contract ZombieHelper is ZombieFeeding {
 
-    modifier aboveLevel(uint _level, uint _zombieId) {
+    modifier aboveLevel(uint _level, uint _zombieId) { // 함수 조건 생성
         require(zombies[_zombieId].level >= _level);
         _;
     }

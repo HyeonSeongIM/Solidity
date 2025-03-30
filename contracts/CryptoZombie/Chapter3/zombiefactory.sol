@@ -8,13 +8,13 @@ contract ZombieFactory is Ownable {
 
     uint dnaDigits = 16;
     uint dnaModulus = 10 ** dnaDigits;
-    uint cooldownTime = 1 days;
+    uint cooldownTime = 1 days; // 대기시간
 
     struct Zombie {
         string name;
         uint dna;
-        uint32 level;
-        uint32 readyTime;
+        uint32 level; // 레벨
+        uint32 readyTime; // 쿨다운 시간 (대기시간)
     }
 
     Zombie[] public zombies;
