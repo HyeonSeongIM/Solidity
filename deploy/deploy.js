@@ -1,3 +1,4 @@
+// scripts/deploy.js
 const hre = require("hardhat");
 
 async function main() {
@@ -5,13 +6,19 @@ async function main() {
     const myNFT = await MyNFT.deploy();
     await myNFT.waitForDeployment();
 
-    console.log("NFT Contract deployed to:", myNFT.target);
+    console.log("✅ NFT Contract deployed to:", myNFT.target);
 
-    // GitHub에 업로드된 JSON 주소로 테스트용 민팅
-    const tokenURI = "https://raw.githubusercontent.com/HyeonSeongIM/SolidityStudy/main/assets/images/0.png"
-    const tx = await myNFT.mintNFT("0x5FbDB2315678afecb367f032d93F642f64180aa3", tokenURI);
-    await tx.wait();
-    console.log("NFT minted successfully!");
+    const tokenURI = "https://raw.githubusercontent.com/HyeonSeongIM/SolidityStudy/main/assets/metadata/0.json";
+
+    const [owner] = await hre.ethers.getSigners();
+    const tx = await myNFT.mintNft(owner.address, tokenURI);
+    const receipt = await tx.wait();
+
+    console.log("✅ NFT minted successfully!");
+    console.log("✅ Transaction Hash:", receipt.hash);
+    console.log("✅ NFT Account:", owner.address);
+    console.log("✅ Metadata Link:", tokenURI);
+    console.log("✅ Image:", "https://raw.githubusercontent.com/HyeonSeongIM/SolidityStudy/main/assets/images/0.png");
 }
 
 main().catch((error) => {
