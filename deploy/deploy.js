@@ -8,8 +8,8 @@ async function main() {
     console.log("NFT Contract deployed to:", myNFT.target);
 
     // GitHub에 업로드된 JSON 주소로 테스트용 민팅
-    const tokenURI = "https://raw.githubusercontent.com/hyeonseongIM/solidyStudy/main/assets/images/0.png"
-    const tx = await myNFT.mintNFT("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266", tokenURI);
+    const tokenURI = "https://raw.githubusercontent.com/HyeonseongIM/SolidyStudy/main/assets/images/0.png"
+    const tx = await myNFT.mintNFT("0x5FbDB2315678afecb367f032d93F642f64180aa3", tokenURI);
     await tx.wait();
     console.log("NFT minted successfully!");
 }
