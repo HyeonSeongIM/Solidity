@@ -1,7 +1,7 @@
 {
   "name": "My First NFT",
   "description": "나의 첫 번째 NFT - 이건 내가 개발한 이야기를 담은 토큰입니다.",
-  "image": "https://raw.githubusercontent.com/HyeonseongIM/SolidyStudy/main/assets/images/0.png",
+  "image": "https://raw.githubusercontent.com/HyeonSeongIM/SolidityStudy/main/assets/images/0.png",
   "attributes": [
     {
       "trait_type": "레어도",
