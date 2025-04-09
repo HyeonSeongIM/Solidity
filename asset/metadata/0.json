@@ -1,0 +1,15 @@
+{
+  "name": "My First NFT",
+  "description": "나의 첫 번째 NFT - 이건 내가 개발한 이야기를 담은 토큰입니다.",
+  "image": "https://raw.githubusercontent.com/hyeonseongIM/solidyStudy/main/assets/images/0.png",
+  "attributes": [
+    {
+      "trait_type": "레어도",
+      "value": "전설"
+    },
+    {
+      "trait_type": "출시년도",
+      "value": "2025"
+    }
+  ]
+}
